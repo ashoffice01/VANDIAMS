@@ -72,6 +72,88 @@ export default function AboutPage() {
           </div>
         </div>
 
+      {/* Brand Cards Section */}
+<div className="mt-5">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    {/* Card 1 */}
+    <div className="bg-[#fbf9f7] border border-[#e7e1db] shadow-sm p-10 text-left">
+      <p className="font-serif tracking-wide text-[#b59a6a] mb-6">
+        VANDIAMS
+      </p>
+
+      <h3 className="font-serif text-lg mb-1">
+        Hanna Vu
+      </h3>
+      <p className="text-sm text-gray-500 mb-6">
+        Chief Executive Officer
+      </p>
+
+      <div className="text-sm text-gray-600 space-y-2">
+        <p>Tel · +1 954 292 1717</p>
+        <p>Email · hanna@vandiams.com</p>
+        <p>Web · www.vandiams.com</p>
+      </div>
+
+      <div className="mt-8 h-[2px] w-12 bg-[#b59a6a]" />
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#fbf9f7] border border-[#e7e1db] shadow-sm p-10 text-left">
+      <p className="font-serif tracking-wide text-[#b59a6a] mb-6">
+        VANDIAMS
+      </p>
+
+      <h3 className="font-serif text-lg mb-1">
+        Vanessa Kakon
+      </h3>
+      <p className="text-sm text-gray-500 mb-6">
+        French Designer · Co-Founder
+      </p>
+
+      <div className="text-sm text-gray-600 space-y-2">
+        <p>Tel · +1 796 246 9702</p>
+        <p>Email · vanessa@vandiams.com</p>
+        <p>Web · www.vandiams.com</p>
+      </div>
+
+      <div className="mt-8 h-[2px] w-12 bg-[#b59a6a]" />
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-[#fbf9f7] border border-[#e7e1db] shadow-sm p-10 text-left">
+      <p className="font-serif tracking-wide text-[#b59a6a] mb-6">
+        VANDIAMS
+      </p>
+
+      <h3 className="font-serif text-lg mb-4">
+        Lab-Grown Diamond Certificate
+      </h3>
+
+      <div className="grid grid-cols-2 gap-y-3 text-sm text-gray-600 mb-6">
+        <p>Carat</p>
+        <p className="text-right">1.50ct</p>
+
+        <p>Cut</p>
+        <p className="text-right">Ideal</p>
+
+        <p>Clarity</p>
+        <p className="text-right">VVS1</p>
+
+        <p>Origin</p>
+        <p className="text-right">Lab-Grown</p>
+      </div>
+
+      <p className="text-xs text-gray-500 leading-relaxed">
+        Certified lab-grown diamond.
+        Ethical sourcing · Conflict-free
+      </p>
+
+      <div className="mt-8 h-[2px] w-12 bg-[#b59a6a]" />
+    </div>
+  </div>
+</div>
+
+
         {/* Values */}
         <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
           {[
