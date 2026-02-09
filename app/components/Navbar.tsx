@@ -6,12 +6,13 @@ import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const closeMenu = () => setOpen(false);
+  const [shopOpen, setShopOpen] = useState(false);
   const { items } = useCart();
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      {/* Fixed-height navbar */}
+      <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
@@ -22,65 +23,90 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-          <Link href="/" className="hover:text-gray-600 transition">
-            Home
-          </Link>
+          <Link href="/">Home</Link>
 
-          <Link href="/products" className="hover:text-gray-600 transition">
-            Shop
-          </Link>
+          {/* Shop Mega Menu */}
+          <div
+            className="relative"
+            onMouseEnter={() => setShopOpen(true)}
+            onMouseLeave={() => setShopOpen(false)}
+          >
+            <button className="hover:text-gray-600 transition">
+              Shop
+            </button>
 
-          <Link href="/custom" className="hover:text-gray-600 transition">
-            AI Design Studio
-          </Link>
+            {shopOpen && (
+              <div className="absolute left-0 top-full w-[720px] bg-white border shadow-xl p-10 grid grid-cols-3 gap-8">
+                {/* Engagement Rings */}
+                <div>
+                  <h4 className="text-sm font-medium uppercase tracking-widest mb-4">
+                    Engagement Rings
+                  </h4>
+                  <ul className="space-y-3 text-sm normal-case">
+                    <li><Link href="/products?category=solitaire">Solitaire</Link></li>
+                    <li><Link href="/products?category=halo">Halo</Link></li>
+                    <li><Link href="/products?category=oval">Oval Cut</Link></li>
+                    <li>
+                      <Link href="/products" className="text-xs uppercase tracking-widest">
+                        View All →
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-          <Link href="/how-it-works" className="hover:text-gray-600 transition">
-            How It Works
-          </Link>
+                {/* Fine Jewelry */}
+                <div>
+                  <h4 className="text-sm font-medium uppercase tracking-widest mb-4">
+                    Fine Jewelry
+                  </h4>
+                  <ul className="space-y-3 text-sm normal-case">
+                    <li><Link href="/earrings">Earrings</Link></li>
+                    <li><Link href="/bracelets">Bracelets</Link></li>
+                    <li><Link href="/necklaces">Necklaces</Link></li>
+                  </ul>
+                </div>
 
-          <Link href="/sustainability" className="hover:text-gray-600 transition">
-            Sustainability
-          </Link>
+                {/* Featured */}
+                <div>
+                  <h4 className="text-sm font-medium uppercase tracking-widest mb-4">
+                    Featured
+                  </h4>
+                  <ul className="space-y-3 text-sm normal-case">
+                    <li><Link href="/products?tag=best-sellers">Best Sellers</Link></li>
+                    <li><Link href="/products?tag=new">New Arrivals</Link></li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
 
-          <Link href="/reviews" className="hover:text-gray-600 transition">
-            Reviews
-          </Link>
-
-          <Link href="/faq" className="hover:text-gray-600 transition">
-            FAQ
-          </Link>
-
-          <Link href="/contact" className="hover:text-gray-600 transition">
-            Contact
-          </Link>
+          <Link href="/custom">AI Design Studio</Link>
+          <Link href="/how-it-works">How It Works</Link>
+          <Link href="/sustainability">Sustainability</Link>
+          <Link href="/reviews">Reviews</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <Link
-            href="/account"
-            className="hidden md:block text-sm hover:text-gray-600 transition"
-          >
+          <Link href="/account" className="hidden md:block">
             Account
           </Link>
 
-          <Link
-            href="/cart"
-            className="relative hidden md:block text-sm hover:text-gray-600 transition"
-          >
+          <Link href="/cart" className="relative hidden md:block">
             Cart
             {items.length > 0 && (
-              <span className="absolute -top-2 -right-3 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-2 -right-3 bg-black text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                 {items.length}
               </span>
             )}
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile toggle */}
           <button
             className="md:hidden text-2xl"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
           >
             ☰
           </button>
@@ -89,30 +115,28 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <nav className="flex flex-col text-sm uppercase tracking-widest">
-            {[
-              ["Home", "/"],
-              ["Shop", "/products"],
-              ["AI Design Studio", "/custom"],
-              ["How It Works", "/how-it-works"],
-              ["Sustainability", "/sustainability"],
-              ["Reviews", "/reviews"],
-              ["FAQ", "/faq"],
-              ["Contact / Book Consultation", "/contact"],
-              ["Account", "/account"],
-              ["Cart", "/cart"],
-            ].map(([label, href]) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={closeMenu}
-                className="px-6 py-4 border-b hover:bg-gray-50"
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
+        <div className="md:hidden border-t bg-white">
+          {[
+            ["Home", "/"],
+            ["Shop", "/products"],
+            ["AI Design Studio", "/custom"],
+            ["How It Works", "/how-it-works"],
+            ["Sustainability", "/sustainability"],
+            ["Reviews", "/reviews"],
+            ["FAQ", "/faq"],
+            ["Contact", "/contact"],
+            ["Account", "/account"],
+            ["Cart", "/cart"],
+          ].map(([label, href]) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="block px-6 py-4 border-b uppercase tracking-widest text-sm"
+            >
+              {label}
+            </Link>
+          ))}
         </div>
       )}
     </header>
