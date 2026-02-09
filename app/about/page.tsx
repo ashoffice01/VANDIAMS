@@ -5,9 +5,9 @@ export default function AboutPage() {
     <section className="bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6 py-24">
         {/* Hero / Brand Story */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center mb-32">
           {/* Image */}
-          <div className="relative w-full h-[520px]">
+          {/* <div className="relative w-full h-[520px]">
             <Image
               src="/images/about-brand-story.png"
               alt="VANDIAMS Brand Story"
@@ -15,7 +15,7 @@ export default function AboutPage() {
               className="object-cover"
               priority
             />
-          </div>
+          </div> */}
 
           {/* Text */}
           <div>
