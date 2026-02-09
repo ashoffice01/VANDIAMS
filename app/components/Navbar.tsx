@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -18,13 +19,19 @@ export default function Navbar() {
           href="/"
           className="text-2xl font-serif tracking-wide hover:opacity-80 transition"
         >
-          VANDIAMS
+           <Image
+                      src="/brand.jpeg"
+                      alt="VANDIAMS"
+                      width={160}
+                      height={50}
+                     
+                    />
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-          <Link href="/">Home</Link>
-
+          {/* <Link href="/">Home</Link> */}
+          <Link href="/about">ABOUT</Link>
           {/* Shop Mega Menu */}
           <div
             className="relative"
@@ -81,16 +88,16 @@ export default function Navbar() {
           </div>
 
           <Link href="/custom">AI Design Studio</Link>
-          <Link href="/how-it-works">How It Works</Link>
-          <Link href="/sustainability">Sustainability</Link>
-          <Link href="/reviews">Reviews</Link>
-          <Link href="/faq">FAQ</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="#">How It Works</Link>
+          <Link href="#">Sustainability</Link>
+          <Link href="#">Reviews</Link>
+          <Link href="#">FAQ</Link>
+          <Link href="#">Contact</Link>
         </nav>
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <Link href="/account" className="hidden md:block">
+          <Link href="#" className="hidden md:block">
             Account
           </Link>
 
@@ -117,15 +124,16 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t bg-white">
           {[
-            ["Home", "/"],
+            // ["Home", "/"],
+            ["About", "/about"],
             ["Shop", "/products"],
             ["AI Design Studio", "/custom"],
-            ["How It Works", "/how-it-works"],
-            ["Sustainability", "/sustainability"],
-            ["Reviews", "/reviews"],
-            ["FAQ", "/faq"],
-            ["Contact", "/contact"],
-            ["Account", "/account"],
+            ["How It Works", "#"],
+            ["Sustainability", "#"],
+            ["Reviews", "#"],
+            ["FAQ", "#"],
+            ["Contact", "#"],
+            ["Account", "#"],
             ["Cart", "/cart"],
           ].map(([label, href]) => (
             <Link

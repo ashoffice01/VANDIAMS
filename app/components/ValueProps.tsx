@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sparkles,
   Leaf,
@@ -30,24 +32,47 @@ const items = [
 
 export default function ValueProps() {
   return (
-    <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-        {items.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div key={item.title} className="text-center">
-              <div className="flex justify-center mb-6">
-                <Icon size={36} strokeWidth={1.25} />
+    <section className="relative bg-white py-28">
+      {/* subtle divider line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gray-200" />
+
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Optional heading */}
+        <div className="text-center mb-20">
+          <h2 className="font-serif text-3xl md:text-4xl mb-4">
+            A New Way to Create Jewelry
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto">
+            Technology, craftsmanship, and responsibility—working together.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-14">
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="group text-center transition-transform duration-300 hover:-translate-y-1"
+              >
+                {/* Icon */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-black transition">
+                    <Icon size={26} strokeWidth={1.3} />
+                  </div>
+                </div>
+
+                {/* Text */}
+                <h3 className="font-serif text-lg mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {item.text}
+                </p>
               </div>
-              <h3 className="font-serif text-lg mb-3">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-600">
-                {item.text}
-              </p>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
