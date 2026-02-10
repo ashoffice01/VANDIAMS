@@ -1,0 +1,54 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  passwordHash String
+  createdAt DateTime @default(now())
+}
+
+model ContactSubmission {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model CustomDesign {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String
+  jewelryType String
+  occasion    String?
+  metal       String
+  budget      String
+  notes       String?
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+}
+
+model CelebrityFeature {
+  id           Int     @id @default(autoincrement())
+  name         String
+  subtitle     String
+  productName  String
+  productImage String
+  heroImage    String
+  productLink  String
+  active       Boolean @default(true)
+}
+
+model SiteSetting {
+  key   String @id
+  value String
+}
