@@ -7,6 +7,7 @@ import Testimonials from "./components/Testimonials";
 import CTASection from "./components/CTASection";
 import PressMarquee from "./components/PressMarquee";
 import HowItWorksPage from "./how-it-works/page";
+import CelebrityFeature from "./components/CelebrityFeature";
 export default function Home() {
   return (
     <>
@@ -14,8 +15,9 @@ export default function Home() {
       <ValueProps />
       <ParallaxSection />
       <Collections />
-      <PressMarquee/>
+      <PressMarquee/>    
       <HowItWorksPage />
+      <CelebrityFeature />
       <Testimonials />
       <CTASection />
     </>
