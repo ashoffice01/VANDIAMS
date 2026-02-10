@@ -19,7 +19,7 @@ export default function ParallaxSection() {
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1599643477877-530eb83abc8e)",
-          transform: `translateY(${offset}px)`,
+          //transform: `translateY(${offset}px)`,
         }}
       />
 
@@ -32,7 +32,7 @@ export default function ParallaxSection() {
           <h2 className="font-serif text-4xl md:text-5xl mb-6">
             Modern Diamond Luxury
           </h2>
-          <p className="text-lg text-gray-200">
+          <p className="text-lg text-white-200">
             Designed with intention. Crafted responsibly. Powered by AI.
           </p>
         </div>

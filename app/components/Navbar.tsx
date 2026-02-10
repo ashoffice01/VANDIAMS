@@ -69,9 +69,9 @@ export default function Navbar() {
                     Fine Jewelry
                   </h4>
                   <ul className="space-y-3 text-sm normal-case">
-                    <li><Link href="/earrings">Earrings</Link></li>
-                    <li><Link href="/bracelets">Bracelets</Link></li>
-                    <li><Link href="/necklaces">Necklaces</Link></li>
+                    <li><Link href="/products?category=earrings">Earrings</Link></li>
+                    <li><Link href="/products?category=bracelets">Bracelets</Link></li>
+                    <li><Link href="/products?category=necklaces">Necklaces</Link></li>
                   </ul>
                 </div>
 
@@ -90,11 +90,9 @@ export default function Navbar() {
           </div>
 
           <Link href="/custom">AI Design Studio</Link>
-          <Link href="#">How It Works</Link>
-          <Link href="#">Sustainability</Link>
-          <Link href="#">Reviews</Link>
+          <Link href="/how-it-works">How It Works</Link>         
           <Link href="#">FAQ</Link>
-          <Link href="#">Contact</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
 
         {/* Right Actions */}
@@ -142,11 +140,9 @@ export default function Navbar() {
             ["About", "/about"],
             ["Shop", "/products"],
             ["AI Design Studio", "/custom"],
-            ["How It Works", "#"],
-            ["Sustainability", "#"],
-            ["Reviews", "#"],
+            ["How It Works", "/how-it-works"],       
             ["FAQ", "#"],
-            ["Contact", "#"],
+            ["Contact", "/contact"],
             ["Account", "#"],
             ["Cart", "/cart"],
           ].map(([label, href]) => (

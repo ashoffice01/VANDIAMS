@@ -5,7 +5,8 @@ import Collections from "./components/Collections";
 import Process from "./components/Process";
 import Testimonials from "./components/Testimonials";
 import CTASection from "./components/CTASection";
-
+import PressMarquee from "./components/PressMarquee";
+import HowItWorksPage from "./how-it-works/page";
 export default function Home() {
   return (
     <>
@@ -13,7 +14,8 @@ export default function Home() {
       <ValueProps />
       <ParallaxSection />
       <Collections />
-      <Process />
+      <PressMarquee/>
+      <HowItWorksPage />
       <Testimonials />
       <CTASection />
     </>
