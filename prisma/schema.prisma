@@ -48,7 +48,19 @@ model CelebrityFeature {
   active       Boolean @default(true)
 }
 
+
 model SiteSetting {
   key   String @id
   value String
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float
+  category    String
+  imageUrl    String
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
 }

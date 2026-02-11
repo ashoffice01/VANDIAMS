@@ -6,6 +6,24 @@ import { useState } from "react";
 
 const slides = [
   {
+    celebrity: "Sydney Sweeney",
+    subtitle: "Wearing Solitaire Engagement Ring",
+    productName: "Marquise Lab Grown Diamond Solitaire Engagement Ring",
+    productImage: "/images/Sydney_Sweeney_product.jpg",
+    heroImage:
+      "/images/Sydney_Sweeney.jpg",
+    href: "/products",
+  },
+  {
+    celebrity: "Jennifer Lopez",
+    subtitle: "Wearing Halo Engagement Ring",
+    productName: "Round Halo Engagement Ring",
+    productImage: "/images/Jennifer_Lopez_product.jpg",
+    heroImage:
+      "/images/Jennifer_Lopez.jpg",
+    href: "/products",
+  },
+  {
     celebrity: "Selena Gomez",
     subtitle: "Wearing Cluster Huggies",
     productName: "Cluster Huggies",
@@ -15,21 +33,12 @@ const slides = [
     href: "/products",
   },
   {
-    celebrity: "saike caiel",
-    subtitle: "Wearing Cluster Huggies",
-    productName: "Cluster Huggies",
-    productImage: "/images/cel2_item.jpg",
+    celebrity: "Ariana Grande",
+    subtitle: "Wearing Boundless Stars",
+    productName: "Round Stud Earrings",
+    productImage: "/images/Ariana_Grande_product.jpg",
     heroImage:
-      "/images/cel2.jpg",
-    href: "/products",
-  },
-  {
-    celebrity: "Selena Gomez",
-    subtitle: "Wearing Cluster Huggies",
-    productName: "Cluster Huggies",
-    productImage: "/images/cel1_item.jpg",
-    heroImage:
-      "/images/cel1.jpg",
+      "/images/Ariana_Grande.jpg",
     href: "/products",
   },
 ];

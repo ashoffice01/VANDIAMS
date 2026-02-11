@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useEffect, useState } from "react";
 
@@ -35,6 +36,14 @@ export default function ParallaxSection() {
           <p className="text-lg text-white-200">
             Designed with intention. Crafted responsibly. Powered by AI.
           </p>
+          <p className="mt-20 text-lg text-white-200">
+           <Link
+              href="/custom"
+              className="px-10 py-4 bg-white text-black text-sm uppercase tracking-widest"
+            >
+              Start Designing
+            </Link>
+            </p>
         </div>
       </div>
     </section>

@@ -7,10 +7,10 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-const logout = async () => {
-  await fetch("/api/admin/logout", { method: "POST" });
-  window.location.href = "/admin/login";
-};
+  const logout = async () => {
+    await fetch("/api/admin/logout", { method: "POST" });
+    window.location.href = "/admin/login";
+  };
 
 
   return (
@@ -29,6 +29,14 @@ const logout = async () => {
           >
             Dashboard
           </Link>
+
+          <Link
+            href="/admin/products"
+            className="block px-4 py-2 rounded hover:bg-neutral-100"
+          >
+            Products
+          </Link>
+
 
           <Link
             href="/admin/custom-designs"

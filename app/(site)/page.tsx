@@ -8,17 +8,30 @@ import CTASection from "./components/CTASection";
 import PressMarquee from "./components/PressMarquee";
 import HowItWorksPage from "./how-it-works/page";
 import CelebrityFeature from "./components/CelebrityFeature";
+import ComplimentaryGift from "./components/ComplimentaryGift";
+import LabGrownDiamonds from "./components/LabGrownDiamonds";
+import GiftGuide from "./components/GiftGuide";
+import ShopByStyle from "./components/ShopByStyle";
+import JewelrySpecialists from "./components/JewelrySpecialists";
+
+
+
 export default function Home() {
   return (
     <>
       <Hero />
-      <ValueProps />
+      <ComplimentaryGift />
       <ParallaxSection />
-      <Collections />
-      <PressMarquee/>    
-      <HowItWorksPage />
+      <LabGrownDiamonds />
+      <GiftGuide />
+      <HowItWorksPage />     
+      <Collections />     
+      <PressMarquee/>         
       <CelebrityFeature />
       <Testimonials />
+      <ShopByStyle/>
+      <ValueProps />
+      <JewelrySpecialists />
       <CTASection />
     </>
   );

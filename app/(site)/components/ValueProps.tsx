@@ -32,11 +32,9 @@ const items = [
 
 export default function ValueProps() {
   return (
-    <section className="relative bg-white py-28">
+    <section className="relative bg-white/70 py-28">
       {/* subtle divider line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gray-200" />
-
-      <div className="max-w-7xl mx-auto px-6">
+           <div className="max-w-7xl mx-auto px-6">
         {/* Optional heading */}
         <div className="text-center mb-20">
           <h2 className="font-serif text-3xl md:text-4xl mb-4">
