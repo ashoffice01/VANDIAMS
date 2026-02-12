@@ -53,7 +53,7 @@ export default async function ProductsPage() {
                                 </td>
 
                                 <td className="p-4 text-right">
-                                    <form action={`/api/admin/products/${p.id}`} method="POST">
+                                     <form action={`/api/admin/products/${String(p.id)}`} method="POST">
                                         <button
                                             type="submit"
                                             className="text-red-600 hover:underline"
@@ -61,7 +61,7 @@ export default async function ProductsPage() {
                                             Delete
                                         </button>
                                         <form
-                                            action={`/api/admin/products/feature/${p.id}`}
+                                            action={`/api/admin/products/feature/${String(p.id)}`}
                                             method="POST"
                                             className="inline"
                                         >
